@@ -1,43 +1,15 @@
-/*Definicion de clases*/
+/*Importación de clases*/
+import {CuentaCorriente} from './CuentaCorriente.js';
+import {Cliente} from './Cliente.js'
 
-class Cliente {
-    nombreCliente;
-    dniCliente;
-    rutCliente;
-}
-
-class CuentaCorriente {
-    numero;
-    #saldo;
-    agencia;
-
-    /*El saldo siempre empezará en 0*/
-    constructor() {
-        this.#saldo = 0;
-        this.numero = '';
-        this.agencia = '';
-    }
-
-    depositoEnCuenta(valor) {
-        if (valor > 0)
-            this.#saldo += valor;
-        return this.#saldo;
-    }
-    retirarEnCuenta(valor) {
-        if (valor <= this.#saldo)
-            this.#saldo -= valor;
-        return this.#saldo;    
-    }
-    verSaldo(){
-        return this.#saldo;
-    }
-}
-
-cuentaDeLeonardo = new CuentaCorriente();
+const cuentaDeLeonardo = new CuentaCorriente();
 
 let saldo = cuentaDeLeonardo.verSaldo();
-
 console.log('El saldo actual es '+ saldo);
+
+saldo = cuentaDeLeonardo.depositoEnCuenta (100);
+console.log('El saldo actual es '+ saldo);
+
 
 
 
