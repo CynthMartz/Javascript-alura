@@ -1,37 +1,43 @@
-/*Definicion de clases*/ 
+/*Definicion de clases*/
 
-class Cliente
-{
+class Cliente {
     nombreCliente;
     dniCliente;
     rutCliente;
 }
 
-class CuentaCorriente
-{
+class CuentaCorriente {
     numero;
     #saldo;
     agencia;
 
-    /*El saldo siempre empezará en 0*/ 
-    constructor(){
-        this.#saldo =0;
-        this.numero='';
+    /*El saldo siempre empezará en 0*/
+    constructor() {
+        this.#saldo = 0;
+        this.numero = '';
         this.agencia = '';
     }
 
-    depositoEnCuenta(valor){
+    depositoEnCuenta(valor) {
         if (valor > 0)
-        this.#saldo += valor;
+            this.#saldo += valor;
+        return this.#saldo;
     }
-    retirarEnCuenta(valor){
-        if(valor <= this.#saldo)
-        this.#saldo -= valor;
+    retirarEnCuenta(valor) {
+        if (valor <= this.#saldo)
+            this.#saldo -= valor;
+        return this.#saldo;    
+    }
+    verSaldo(){
+        return this.#saldo;
     }
 }
 
-cuentaDeLeonardo = new CuentaCorriente ();
-console.log(cuentaDeLeonardo);
+cuentaDeLeonardo = new CuentaCorriente();
+
+let saldo = cuentaDeLeonardo.verSaldo();
+
+console.log('El saldo actual es '+ saldo);
 
 
 
