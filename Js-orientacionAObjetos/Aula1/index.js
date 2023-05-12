@@ -1,3 +1,5 @@
+/*Definicion de clases*/ 
+
 class Cliente
 {
     nombreCliente;
@@ -8,15 +10,32 @@ class Cliente
 class CuentaCorriente
 {
     numero;
-    saldo;
+    #saldo;
     agencia;
 
+    /*El saldo siempre empezará en 0*/ 
+    constructor(){
+        this.#saldo =0;
+        this.numero='';
+        this.agencia = '';
+    }
+
     depositoEnCuenta(valor){
-        this.saldo += valor;
+        if (valor > 0)
+        this.#saldo += valor;
+    }
+    retirarEnCuenta(valor){
+        if(valor <= this.#saldo)
+        this.#saldo -= valor;
     }
 }
 
+cuentaDeLeonardo = new CuentaCorriente ();
+console.log(cuentaDeLeonardo);
 
+
+
+/*
 const cliente1 = new Cliente ();
 
 cliente1.nombreCliente="José";
@@ -39,3 +58,5 @@ cuentaCorriente2.agencia="Central"
 
 cuentaCorriente2.depositoEnCuenta(200);
 console.log(cuentaCorriente2.saldo);
+*/
+
