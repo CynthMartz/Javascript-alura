@@ -8,19 +8,20 @@ export class CuentaCorriente
     #saldo;
 
     /*set y get protegen los datos privados*/ 
-    set setCliente (valor){
+    set cliente (valor){
         if(valor instanceof Cliente)
             this.#cliente = valor;
     }
 
-    get getCliente(){
+    get cliente(){
         return this.#cliente;
     }
     /*El saldo siempre empezará en 0*/
-    constructor() {
-        this.#cliente= null;
-        this.numero = '';
-        this.agencia = '';
+    constructor(cliente, numero, agencia) {
+        this.cliente=cliente;
+        /* this.#cliente= null;*/
+        this.numero = numero;
+        this.agencia = agencia;
         this.#saldo = 0;
     }
 

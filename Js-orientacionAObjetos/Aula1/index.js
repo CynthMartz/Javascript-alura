@@ -4,15 +4,21 @@ import {Cliente} from './Cliente.js'
 
 
 /*******************CLIENTE LEONARDO****************/ 
-const cliente = new Cliente();
+const cliente = new Cliente('Leonardo','123456','987456321');
+console.log(cliente);
+/*
 cliente.nombreCliente ='Leonardo';
 cliente.dniCliente='123456';
 cliente.rutCliente='987456321';
+*/
 
-const cuentaDeLeonardo = new CuentaCorriente();
+
+const cuentaDeLeonardo = new CuentaCorriente(cliente, '654987', '01');
+/*
 cuentaDeLeonardo.numero='654987';
 cuentaDeLeonardo.agencia='01';
 cuentaDeLeonardo.cliente= cliente;
+*/
 
 let saldo = cuentaDeLeonardo.verSaldo();
 
@@ -21,16 +27,20 @@ console.log('El saldo actual es (CuentaLeonardo)'+ saldo);
 
 /*******************CLIENTE MARIA****************/
 
-const cliente2 = new Cliente();
+const cliente2 = new Cliente('Maria','1234577','654123789');
+console.log(cliente2);
+/*
 cliente2.nombreCliente ='Maria';
 cliente2.dniCliente='1234577';
 cliente2.rutCliente='654123789';
+*/
 
-
-const cuentaDeMaria = new CuentaCorriente();
+const cuentaDeMaria = new CuentaCorriente(cliente2, '654987','002');
+/*
 cuentaDeMaria.numero='654987';
 cuentaDeMaria.agencia='02';
 cuentaDeMaria.setCliente= cliente2;
+*/
 
 /*Mantiene ocultos los datos privados*/
 /*
