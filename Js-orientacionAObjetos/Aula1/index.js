@@ -2,16 +2,45 @@
 import {CuentaCorriente} from './CuentaCorriente.js';
 import {Cliente} from './Cliente.js'
 
+
+/*******************CLIENTE LEONARDO****************/ 
+const cliente = new Cliente();
+cliente.nombreCliente ='Leonardo';
+cliente.dniCliente='123456';
+cliente.rutCliente='987456321';
+
 const cuentaDeLeonardo = new CuentaCorriente();
+cuentaDeLeonardo.numero='654987';
+cuentaDeLeonardo.agencia='01';
+cuentaDeLeonardo.cliente= cliente;
+
 
 let saldo = cuentaDeLeonardo.verSaldo();
-console.log('El saldo actual es '+ saldo);
+
 
 saldo = cuentaDeLeonardo.depositoEnCuenta (100);
-console.log('El saldo actual es '+ saldo);
+console.log('El saldo actual es (CuentaLeonardo)'+ saldo);
+
+/*******************CLIENTE MARIA****************/
+
+const cliente2 = new Cliente();
+cliente2.nombreCliente ='Maria';
+cliente2.dniCliente='1234577';
+cliente2.rutCliente='654123789';
 
 
+const cuentaDeMaria = new CuentaCorriente();
+cuentaDeMaria.numero='654987';
+cuentaDeMaria.agencia='01';
+cuentaDeMaria.cliente= cliente;
 
+cuentaDeLeonardo.transferirParaCuenta(100,cuentaDeMaria);
+const saldoMaria = cuentaDeMaria.verSaldo ();
+
+console.log('El saldo actual es (CuentaMaria)'+ saldoMaria);
+
+const saldoLeonardo = cuentaDeLeonardo.verSaldo();
+console.log('El saldo actual es (CuentaLeonardo)'+ saldoLeonardo);
 
 /*
 const cliente1 = new Cliente ();
