@@ -6,6 +6,7 @@ export class CuentaCorriente
     numero;
     agencia;
     #saldo;
+    static cantidadCuentas=0;
 
     /*set y get protegen los datos privados*/ 
     set cliente (valor){
@@ -23,6 +24,7 @@ export class CuentaCorriente
         this.numero = numero;
         this.agencia = agencia;
         this.#saldo = 0;
+        CuentaCorriente.cantidadCuentas++;
     }
 
     depositoEnCuenta(valor) {

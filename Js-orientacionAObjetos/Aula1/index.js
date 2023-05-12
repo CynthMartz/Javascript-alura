@@ -23,7 +23,7 @@ cuentaDeLeonardo.cliente= cliente;
 let saldo = cuentaDeLeonardo.verSaldo();
 
 saldo = cuentaDeLeonardo.depositoEnCuenta (100);
-console.log('El saldo actual es (CuentaLeonardo)'+ saldo);
+/*console.log('El saldo actual es (CuentaLeonardo)'+ saldo);*/
 
 /*******************CLIENTE MARIA****************/
 
@@ -51,7 +51,7 @@ console.log(cuentaDeMaria);
 */
 
 /*Mantiene los datos visibles*/ 
-console.log(cuentaDeMaria.getCliente);
+/*console.log(cuentaDeMaria.getCliente);*/
 cuentaDeMaria.cliente=0;
 
 let parametroValor= 100;
@@ -60,7 +60,13 @@ let parametroValor= 100;
 cuentaDeLeonardo.transferirParaCuenta(parametroValor,cuentaDeMaria);
 
 const saldoMaria = cuentaDeMaria.verSaldo ();
+
+
+console.log(CuentaCorriente.cantidadCuentas);
+
+/*
 console.log('Cuenta de Maria', cuentaDeMaria);
+*/
 /*
 const saldoMaria = cuentaDeMaria.verSaldo ();
 
