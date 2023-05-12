@@ -14,9 +14,7 @@ cuentaDeLeonardo.numero='654987';
 cuentaDeLeonardo.agencia='01';
 cuentaDeLeonardo.cliente= cliente;
 
-
 let saldo = cuentaDeLeonardo.verSaldo();
-
 
 saldo = cuentaDeLeonardo.depositoEnCuenta (100);
 console.log('El saldo actual es (CuentaLeonardo)'+ saldo);
@@ -31,16 +29,36 @@ cliente2.rutCliente='654123789';
 
 const cuentaDeMaria = new CuentaCorriente();
 cuentaDeMaria.numero='654987';
-cuentaDeMaria.agencia='01';
-cuentaDeMaria.cliente= cliente;
+cuentaDeMaria.agencia='02';
+cuentaDeMaria.setCliente= cliente2;
 
-cuentaDeLeonardo.transferirParaCuenta(100,cuentaDeMaria);
+/*Mantiene ocultos los datos privados*/
+/*
+if (cuentaDeMaria.cliente)
+console.log(cuentaDeMaria.cliente)
+else
+console.log(cuentaDeMaria);
+*/
+
+/*Mantiene los datos visibles*/ 
+console.log(cuentaDeMaria.getCliente);
+cuentaDeMaria.cliente=0;
+
+let parametroValor= 100;
+
+
+cuentaDeLeonardo.transferirParaCuenta(parametroValor,cuentaDeMaria);
+
+const saldoMaria = cuentaDeMaria.verSaldo ();
+console.log('Cuenta de Maria', cuentaDeMaria);
+/*
 const saldoMaria = cuentaDeMaria.verSaldo ();
 
 console.log('El saldo actual es (CuentaMaria)'+ saldoMaria);
 
 const saldoLeonardo = cuentaDeLeonardo.verSaldo();
 console.log('El saldo actual es (CuentaLeonardo)'+ saldoLeonardo);
+*/
 
 /*
 const cliente1 = new Cliente ();
