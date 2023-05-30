@@ -101,3 +101,6 @@ cuentaCorriente2.depositoEnCuenta(200);
 console.log(cuentaCorriente2.saldo);
 */
 
+let x = "5";
+let y = "7";
+console.log(x + y % 5);
